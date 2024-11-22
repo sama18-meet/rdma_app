@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if sudo mst status -v | grep -q '08:00.0   mlx5_0'
+then
+    sudo ifconfig eth2 up
+    echo mlx5_0
+else
+    sudo ifconfig eth3 up
+    echo mlx5_1
+fi
+
+
